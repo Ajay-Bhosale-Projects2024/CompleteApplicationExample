@@ -20,7 +20,6 @@ namespace CompleteApplicationExample.Controllers
         public ActionResult Index()
         {
             List<Employee> Employees=db.Employees.ToList();
-            ViewData["Register"] = "Registration is completed...";
             return View(Employees);
         }
 
