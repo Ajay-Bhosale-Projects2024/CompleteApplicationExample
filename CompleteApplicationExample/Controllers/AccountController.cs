@@ -13,10 +13,9 @@ namespace CompleteApplicationExample.Controllers
     
     public class AccountController : Controller
     {
-          //useing comment for pull request jjjj
-          //hello how are you
+          
         MVCDBContext db = new MVCDBContext();
-        //jjjjjjj
+        
 
         public ActionResult Login()
         {
