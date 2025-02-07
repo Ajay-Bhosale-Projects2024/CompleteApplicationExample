@@ -18,7 +18,7 @@ namespace CompleteApplicationExample.Controllers
 
         public ActionResult Login()
         {
-           Viewbag["User"]="loging is here";
+           ViewBag["User"]="loging is here";
             return View();
         }
 

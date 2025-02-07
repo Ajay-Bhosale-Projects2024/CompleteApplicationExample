@@ -25,6 +25,8 @@ namespace CompleteApplicationExample.Controllers
 
         public ViewResult AddEmployee()
         {
+            Session["Hii"]="hrkk";
+            
             return View();
         }
 
