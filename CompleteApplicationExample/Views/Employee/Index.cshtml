@@ -1,0 +1,49 @@
+﻿@model IEnumerable<CompleteApplicationExample.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div align="center"><button class="btn btn-primary active" style="font-weight:bold;color:white">@Html.ActionLink("Add Employee", "AddEmployee", "", new { style = "text-decoration:none;color:white" })</button></div>
+<br />
+<div align="center">
+    <table class="table table-striped" border="1" style="font-size:14px;">
+        <tr>
+            <td>@Html.DisplayNameFor(E => E.EmpId)</td>
+            <td> @Html.DisplayNameFor(E => E.Name)</td>
+            <td> @Html.DisplayNameFor(E => E.MonthlyInc)</td>
+            <td>@Html.DisplayNameFor(E => E.YearlyInc)</td>
+            <td>@Html.DisplayNameFor(E => E.Email)</td>
+            <td>@Html.DisplayNameFor(E => E.Mobile)</td>
+            <td>@Html.DisplayNameFor(E => E.Address)</td>
+            <td> @Html.DisplayNameFor(E => E.Attachment)</td>
+
+            <td colspan="3" style="text-align:center;color:brown">Actions</td>
+        </tr>
+
+        @foreach (var k in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(E => k.EmpId)</td>
+                <td>@Html.DisplayFor(E => k.Name)</td>
+                <td>@Html.DisplayFor(E => k.MonthlyInc)</td>
+                <td>@Html.DisplayFor(E => k.YearlyInc)</td>
+                <td>[&nbsp;@Html.DisplayFor(E => k.Email)&nbsp;]</td>
+                <td>[&nbsp;@Html.DisplayFor(E => k.Mobile)&nbsp;]</td>
+                <td>@Html.DisplayFor(E => k.Address)</td>
+                <td><a href="~/Upload/@k.Attachment" class="btn btn-link btn-sm" target=".">View Doc</a></td>
+                <td>@Html.ActionLink("View", "View", new { EmpId = k.EmpId }, new { @class = "btn btn-success"})</td>
+                <td>@Html.ActionLink("Update", "Update", new { EmpId = k.EmpId }, new { @class = "btn btn-info" })</td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { EmpId = k.EmpId,  },
+                   new { onclick = "return confirm('Are you sure of deleting the record?')", @class = "btn btn-danger" })
+                </td>
+            </tr>
+
+        }
+    </table>
+
+
+
+
+</div>

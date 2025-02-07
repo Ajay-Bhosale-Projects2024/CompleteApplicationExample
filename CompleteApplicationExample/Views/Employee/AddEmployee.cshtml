@@ -1,0 +1,63 @@
+﻿@model CompleteApplicationExample.Models.Employee
+@{
+    ViewBag.Title = "AddEmployee";
+}
+
+<h2 class="text-danger">AddEmployee</h2>
+
+<div>
+    @using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post, new { enctype = "Multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div>
+           <p class="text-danger"> @Html.ValidationSummary()</p>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(E => E.EmpId)<br />
+            @Html.EditorFor(E => E.EmpId, new { HtmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.EmpId, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(E => E.Name)<br />
+            @Html.EditorFor(E => E.Name, new { HtmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+        <br />
+
+        <div class="form-group">
+            @Html.LabelFor(E => E.MonthlyInc)<br />
+            @Html.EditorFor(E => E.MonthlyInc, new { HtmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MonthlyInc, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(E => E.Email)<br />
+            @Html.EditorFor(E => E.Email, new { HtmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(E => E.Mobile)<br />
+            @Html.EditorFor(E => E.Mobile, new { HtmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(E => E.Address)<br />
+            @Html.EditorFor(E => E.Address, new { HtmlAttributes = new { @class = "form-control"} })
+            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(E => E.Attachment)  ( .pdf file only )<span>*</span><br />
+            <input type="file" name="selectedFile" /><br />
+            @Html.ValidationMessageFor(model => model.Attachment, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <input type="submit" value="Submit" class="btn btn-primary" />
+        <input type="reset" value="Reset"  class="btn btn-danger"/><br />
+
+
+    }
+</div>
