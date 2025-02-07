@@ -11,7 +11,7 @@ using static System.Data.Entity.Infrastructure.Design.Executor;
 
 namespace CompleteApplicationExample.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class EmployeeController : Controller
     {
         MVCDBContext db = new MVCDBContext();
