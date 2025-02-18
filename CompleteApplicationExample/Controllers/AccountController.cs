@@ -13,6 +13,7 @@ namespace CompleteApplicationExample.Controllers
     
     public class AccountController : Controller
     {
+    //this is my new code
           
         MVCDBContext db = new MVCDBContext();
         
