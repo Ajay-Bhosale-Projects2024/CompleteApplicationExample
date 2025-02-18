@@ -14,6 +14,7 @@ namespace CompleteApplicationExample.Controllers
     public class AccountController : Controller
     {
     //this is my new code
+    //only two minutes ago i have added a this new registration code
           
         MVCDBContext db = new MVCDBContext();
         
