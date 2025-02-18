@@ -118,6 +118,12 @@ namespace CompleteApplicationExample.Controllers
             return RedirectToAction("Index","Employee");
         }
 
+        public ViewResult Diplay()
+        {
+            string str="Writing a code for git check";
+            return View();
+        }
+
 
     }
 }
